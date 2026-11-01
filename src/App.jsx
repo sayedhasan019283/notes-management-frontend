@@ -8,7 +8,7 @@ import Posts from './pages/Posts.jsx';
 import AdminNotes from './pages/AdminNotes.jsx';
 import Users from './pages/Users.jsx';
 import Interests from './pages/Interests.jsx';
-
+import Register from './pages/Register.jsx';
 // UI-level RBAC only (the API enforces the same rules on the server)
 function Guard({ roles }) {
   const { user } = useAuth();
@@ -63,6 +63,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={user ? <Navigate to="/notes" replace /> : <Login />} />
+      <Route path="/register" element={user ? <Navigate to="/notes" replace /> : <Register />} />
       <Route element={<Guard />}>
         <Route element={<Layout />}>
           <Route path="/notes" element={<Notes />} />

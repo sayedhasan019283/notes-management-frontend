@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Eye, EyeOff, Loader2, Lock, LogIn, Mail, ShieldCheck } from 'lucide-react';
 import { useAuth } from '../auth.jsx';
 import { Field, Msg } from '../ui.jsx';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const { login } = useAuth();
@@ -38,6 +39,7 @@ export default function Login() {
         <button className="btn wide" disabled={busy}>
           {busy ? <><Loader2 size={17} className="rot" /> Signing in...</> : <><LogIn size={17} /> Login</>}
         </button>
+        <p className="switch muted">Don't have an account? <Link to="/register">Sign up</Link></p>
       </form>
     </div>
   );
