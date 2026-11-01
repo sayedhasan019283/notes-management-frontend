@@ -1,0 +1,3 @@
+// Resource names EXACTLY as your backend mounts them: /api/v1/<name>/...
+// (your login URL is /api/v1/user/login, so users -> 'user'). Edit if your Postman URLs differ.
+export const ROUTES = { users: 'user', notes: 'note', posts: 'post' };
